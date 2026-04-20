@@ -1,0 +1,32 @@
+---
+import Profile from "../components/astro/Profile.astro";
+import Aurora from "../components/Aurora";
+import "../styles/global.css";
+
+const title: string = "Caio Mayan";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-bg text-text font-sans relative antialiased">
+    <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+      <Aurora
+        colorStops={["#080808", "#4b4b4b", "#000000"]}
+        blend={0.5}
+        amplitude={1.0}
+        speed={1}
+        client:load
+      />
+    </div>
+
+    <div class="relative z-10 mx-auto min-h-screen px-40">
+      <Profile />
+      <slot />
+    </div>
+  </body>
+</html>
