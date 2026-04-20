@@ -4,7 +4,7 @@ import Profile from "../components/astro/Profile.astro";
 import Aurora from "../components/Aurora";
 import "../styles/global.css";
 
-const nameText: string = "Caio Mayan";
+const nameTitleText: string = "Caio Mayan";
 
 const {
   textRole,
@@ -14,6 +14,7 @@ const {
   dateLastUpdated,
   textOr,
   metaLang,
+  lang
 } = Astro.props;
 ---
 
@@ -22,7 +23,7 @@ const {
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <title>{nameText}</title>
+    <title>{nameTitleText}</title>
     <ClientRouter />
   </head>
   <body class="bg-bg text-text font-sans relative antialiased">
@@ -49,6 +50,8 @@ const {
         dateLastUpdated={dateLastUpdated}
         ,
         textOr={textOr}
+        ,
+        lang={lang}
       />
       <slot />
     </div>

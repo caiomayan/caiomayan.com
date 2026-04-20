@@ -13,13 +13,8 @@ const {
   textUpdatedOn,
   dateLastUpdated,
   textOr,
+  lang = "en",
 } = Astro.props;
-
-const lastUpdated: string = new Date().toLocaleDateString("en-US", {
-  month: "long",
-  day: "numeric",
-  year: "numeric",
-});
 ---
 
 <aside
@@ -41,81 +36,76 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
     />
   </div>
   <div>
-    <h1 class="text-neutral-200 text-5xl font-bold mt-5">{textName}</h1>
-    <p class="text-neutral-300 text-lg mt-1">{textRole}</p>
+    <h1 class="text-neutral-200 hover:text-white text-5xl font-bold mt-6 cursor-default">
+      {textName}
+    </h1>
+    <p class="text-neutral-300 hover:text-neutral-200 text-lg mt-1 cursor-default">{textRole}</p>
 
-    <p class="mt-4">
+    <p class="mt-4 cursor-default">
       <a
-        title="Astro.js"
         rel="noopener noreferrer"
         target="_blank"
         href="https://astro.build/"
-        class="hover:text-neutral-500">Astro</a
+        class="hover:text-orange-500">Astro</a
       >{textSeparator}
       <a
-        title="Next.js"
         rel="noopener noreferrer"
         target="_blank"
         href="https://nextjs.org/"
-        class="hover:text-neutral-500">Next.js</a
+        class="hover:text-neutral-400">Next.js</a
       >{textSeparator}
       <a
-        title="Node.js"
         rel="noopener noreferrer"
         target="_blank"
         href="https://nodejs.org/"
-        class="hover:text-neutral-500">Node.js</a
+        class="hover:text-green-600">Node.js</a
       >{textSeparator}
       <a
-        title="Java Spring Boot"
         rel="noopener noreferrer"
         target="_blank"
         href="https://spring.io/projects/spring-boot"
-        class="hover:text-neutral-500">Spring Boot</a
+        class="hover:text-green-300">Spring Boot</a
       >{textSeparator}
       <a
-        title="C# .NET"
         rel="noopener noreferrer"
         target="_blank"
         href="https://dotnet.microsoft.com/"
-        class="hover:text-neutral-500">.NET</a
+        class="hover:text-purple-400">.NET</a
       >{textSeparator}
       <a
-        title="PostgreSQL, MySQL, SQL Server"
+        title={lang === "en" ? ("Experience with PostgreSQL, MySQL and SQL Server") : ("Experiência com PostgreSQL, MySQL e SQL Server")}
         rel="noopener noreferrer"
         target="_blank"
         href="https://pt.wikipedia.org/wiki/SQL"
-        class="hover:text-neutral-500">SQL</a
+        class="hover:text-blue-300">SQL</a
       >{textSeparator}
       <a
-        title="MongoDB"
         rel="noopener noreferrer"
         target="_blank"
         href="https://www.mongodb.com/"
-        class="hover:text-neutral-500">MongoDB</a
+        class="hover:text-green-900">MongoDB</a
       >{textSeparator}
       <a
-        title="Docker"
         rel="noopener noreferrer"
         target="_blank"
         href="https://www.docker.com/"
-        class="hover:text-neutral-500">Docker</a
+        class="hover:text-blue-600">Docker</a
       >
     </p>
 
-    <p class="mt-5 mb-10 text-neutral-400 text-md">
+    <p class="mt-5 mb-10 text-neutral-400 hover:text-neutral-300 text-md cursor-default">
       {textDescription}
     </p>
   </div>
 
-  <ul class="flex gap-4">
+  <ul class="flex gap-4 text-neutral-500">
     <!-- GitHub -->
     <li>
       <a
         href="https://github.com/caiomayan"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-neutral-500"
+        class="hover:text-neutral-700"
       >
         <svg
           stroke="currentColor"
@@ -138,7 +128,7 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
         href="https://www.linkedin.com/in/caiomayan/"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-neutral-500"
+        class="hover:text-neutral-700"
       >
         <svg
           stroke="currentColor"
@@ -161,7 +151,7 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
         href="https://www.instagram.com/caiomayans/"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-neutral-500"
+        class="hover:text-neutral-700"
       >
         <svg
           stroke="currentColor"
@@ -185,31 +175,59 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
       href="/caiomayan.pdf"
       rel="noopener noreferrer"
       target="_blank"
-      class="text-neutral-600 hover:text-neutral-800 text-sm font-medium"
+      class="text-neutral-500 hover:text-neutral-700 text-sm font-medium"
       >{textCurriculum}</a
     >
-    <div class="flex flex-row justify-between">
-      <p class="text-xs">
+    <div class="flex flex-row justify-between items-start gap-2">
+      <a
+        href="https://github.com/caiomayan/caiomayan.com/deployments"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs hover:text-neutral-800 flex-1"
+      >
         {textUpdatedOn}
-        <a
-          href="https://github.com/caiomayan/caiomayan.com/deployments"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-medium hover:text-neutral-800">{dateLastUpdated}</a
-        >
-      </p>
-      <div class="text-xs">
-        <a
-          href="/"
-          class="font-medium hover:text-neutral-800"
-          data-astro-prefetch>en-US</a
-        >
+        <span class="font-medium">{dateLastUpdated}</span>
+      </a>
+      <div class="text-xs whitespace-nowrap shrink-0">
+        {
+          lang === "en" ? (
+            <span
+              title="(Current) English"
+              class="text-neutral-500 font-medium cursor-default"
+            >
+              EN
+            </span>
+          ) : (
+            <a
+              title="Inglês"
+              href="/"
+              class="font-medium hover:text-neutral-800"
+              data-astro-prefetch
+            >
+              EN
+            </a>
+          )
+        }
         <span>{textOr}</span>
-        <a
-          href="/pt"
-          class="font-medium hover:text-neutral-800"
-          data-astro-prefetch>pt-BR</a
-        >
+        {
+          lang === "pt" ? (
+            <span
+              title="(Atual) Português"
+              class="text-neutral-500 font-medium cursor-default"
+            >
+              PT
+            </span>
+          ) : (
+            <a
+              title="Portuguese"
+              href="/pt"
+              class="font-medium hover:text-neutral-800"
+              data-astro-prefetch
+            >
+              PT
+            </a>
+          )
+        }
       </div>
     </div>
   </footer>
