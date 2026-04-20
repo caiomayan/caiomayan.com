@@ -1,23 +1,26 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import react from '@astrojs/react';
+import react from "@astrojs/react";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  site: "https://caiomayan.com",
+  integrations: [react(), sitemap()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'pt'],
+    defaultLocale: "en",
+    locales: ["en", "pt"],
     routing: {
-        prefixDefaultLocale: false
-    }
-  }
+      prefixDefaultLocale: false,
+    },
+  },
 });
