@@ -51,14 +51,20 @@ const {
       <a
         rel="noopener noreferrer"
         target="_blank"
-        href="https://astro.build/"
-        class="hover:text-orange-500">Astro</a
+        href="https://nextjs.org/"
+        class="hover:text-neutral-400">Next.js</a
       >{textSeparator}
       <a
         rel="noopener noreferrer"
         target="_blank"
-        href="https://nextjs.org/"
-        class="hover:text-neutral-400">Next.js</a
+        href="https://dotnet.microsoft.com/"
+        class="hover:text-purple-400">.NET</a
+      >{textSeparator}
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://astro.build/"
+        class="hover:text-orange-500">Astro</a
       >{textSeparator}
       <a
         rel="noopener noreferrer"
@@ -70,29 +76,23 @@ const {
         rel="noopener noreferrer"
         target="_blank"
         href="https://spring.io/projects/spring-boot"
-        class="hover:text-green-300">Spring Boot</a
-      >{textSeparator}
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://dotnet.microsoft.com/"
-        class="hover:text-purple-400">.NET</a
-      >{textSeparator}
+        class="hidden hover:text-green-300">Spring Boot</a
+      >
       <a
         title={lang === "en"
-          ? "Experience with PostgreSQL, MySQL and SQL Server"
-          : "Experiência com PostgreSQL, MySQL e SQL Server"}
+          ? "Experience with PostgreSQL and MySQL"
+          : "Experiência com PostgreSQL e MySQL"}
         rel="noopener noreferrer"
         target="_blank"
         href="https://pt.wikipedia.org/wiki/SQL"
-        class="hover:text-blue-300">SQL</a
+        class="hover:text-sky-400">PostgreSQL</a
       >{textSeparator}
       <a
         rel="noopener noreferrer"
         target="_blank"
         href="https://www.mongodb.com/"
-        class="hover:text-green-700">MongoDB</a
-      >{textSeparator}
+        class="hidden hover:text-green-700">MongoDB</a
+      >
       <a
         rel="noopener noreferrer"
         target="_blank"
@@ -185,7 +185,7 @@ const {
       href="/caiomayan.pdf"
       rel="noopener noreferrer"
       target="_blank"
-      class="text-neutral-500 hover:text-neutral-700 text-sm font-medium"
+      class="hidden text-neutral-500 hover:text-neutral-700 text-sm font-medium"
       >{textCurriculum}</a
     >
     <div class="flex flex-row justify-between items-start gap-2">
