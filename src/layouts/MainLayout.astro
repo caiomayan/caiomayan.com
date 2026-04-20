@@ -1,17 +1,29 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import Profile from "../components/astro/Profile.astro";
 import Aurora from "../components/Aurora";
 import "../styles/global.css";
 
-const title: string = "Caio Mayan";
+const nameText: string = "Caio Mayan";
+
+const {
+  textRole,
+  textDescription,
+  textCurriculum,
+  textUpdatedOn,
+  dateLastUpdated,
+  textOr,
+  metaLang,
+} = Astro.props;
 ---
 
-<html lang="en">
+<html lang={metaLang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
+    <title>{nameText}</title>
+    <ClientRouter />
   </head>
   <body class="bg-bg text-text font-sans relative antialiased">
     <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
@@ -25,7 +37,19 @@ const title: string = "Caio Mayan";
     </div>
 
     <div class="relative z-10 mx-auto min-h-screen px-40">
-      <Profile />
+      <Profile
+        textRole={textRole}
+        ,
+        textDescription={textDescription}
+        ,
+        textCurriculum={textCurriculum}
+        ,
+        textUpdatedOn={textUpdatedOn}
+        ,
+        dateLastUpdated={dateLastUpdated}
+        ,
+        textOr={textOr}
+      />
       <slot />
     </div>
   </body>

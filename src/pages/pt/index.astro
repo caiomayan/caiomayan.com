@@ -1,0 +1,24 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+const lastUpdatedPT: string = new Date().toLocaleDateString("pt-BR", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+});
+---
+
+<MainLayout
+  textRole="Desenvolvedor de Software"
+  ,
+  textDescription="Criação de sites reais sob demanda do início ao fim, com a arquitetura mais limpa e os melhores sistemas de design"
+  ,
+  textCurriculum="Veja meu currículo aqui"
+  ,
+  textUpdatedOn="Atualizado em"
+  ,
+  dateLastUpdated={lastUpdatedPT}
+  ,
+  textOr="ou"
+  ,
+  metaLang="pt"
+/>

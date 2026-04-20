@@ -2,8 +2,18 @@
 import { Image } from "astro:assets";
 import Avatar from "../../assets/Avatar.jpg";
 
-const name: string = "Caio Mayan";
-const role: string = "Software Developer";
+const textName: string = "Caio Mayan";
+
+const textSeparator: string = " ∙";
+
+const {
+  textRole,
+  textDescription,
+  textCurriculum,
+  textUpdatedOn,
+  dateLastUpdated,
+  textOr,
+} = Astro.props;
 
 const lastUpdated: string = new Date().toLocaleDateString("en-US", {
   month: "long",
@@ -23,7 +33,7 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
 
     <Image
       src={Avatar}
-      alt=`Avatar de ${name}`
+      alt=`${textName}'s Avatar'`
       width="400"
       height="400"
       quality="max"
@@ -31,8 +41,8 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
     />
   </div>
   <div>
-    <h1 class="text-neutral-200 text-5xl font-bold mt-5">{name}</h1>
-    <p class="text-neutral-300 text-lg mt-1">Software Developer</p>
+    <h1 class="text-neutral-200 text-5xl font-bold mt-5">{textName}</h1>
+    <p class="text-neutral-300 text-lg mt-1">{textRole}</p>
 
     <p class="mt-4">
       <a
@@ -41,49 +51,49 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
         target="_blank"
         href="https://astro.build/"
         class="hover:text-neutral-500">Astro</a
-      >,
+      >{textSeparator}
       <a
         title="Next.js"
         rel="noopener noreferrer"
         target="_blank"
         href="https://nextjs.org/"
         class="hover:text-neutral-500">Next.js</a
-      >,
+      >{textSeparator}
       <a
         title="Node.js"
         rel="noopener noreferrer"
         target="_blank"
         href="https://nodejs.org/"
         class="hover:text-neutral-500">Node.js</a
-      >,
+      >{textSeparator}
       <a
         title="Java Spring Boot"
         rel="noopener noreferrer"
         target="_blank"
         href="https://spring.io/projects/spring-boot"
         class="hover:text-neutral-500">Spring Boot</a
-      >,
+      >{textSeparator}
       <a
         title="C# .NET"
         rel="noopener noreferrer"
         target="_blank"
         href="https://dotnet.microsoft.com/"
         class="hover:text-neutral-500">.NET</a
-      >,
+      >{textSeparator}
       <a
         title="PostgreSQL, MySQL, SQL Server"
         rel="noopener noreferrer"
         target="_blank"
         href="https://pt.wikipedia.org/wiki/SQL"
         class="hover:text-neutral-500">SQL</a
-      >,
+      >{textSeparator}
       <a
         title="MongoDB"
         rel="noopener noreferrer"
         target="_blank"
         href="https://www.mongodb.com/"
         class="hover:text-neutral-500">MongoDB</a
-      >,
+      >{textSeparator}
       <a
         title="Docker"
         rel="noopener noreferrer"
@@ -94,8 +104,7 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
     </p>
 
     <p class="mt-5 mb-10 text-neutral-400 text-md">
-      Building real on demand websites from beginning to end, with cleanest
-      architecture and best design systems
+      {textDescription}
     </p>
   </div>
 
@@ -177,21 +186,30 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
       rel="noopener noreferrer"
       target="_blank"
       class="text-neutral-600 hover:text-neutral-800 text-sm font-medium"
-      >See my curriculum here</a
+      >{textCurriculum}</a
     >
     <div class="flex flex-row justify-between">
       <p class="text-xs">
-        Updated on <a
-          href="https://github.com/caiomayan/caiomayan.com"
+        {textUpdatedOn}
+        <a
+          href="https://github.com/caiomayan/caiomayan.com/deployments"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-medium hover:text-neutral-800">{lastUpdated}</a
+          class="font-medium hover:text-neutral-800">{dateLastUpdated}</a
         >
       </p>
       <div class="text-xs">
-        <a href="" class="font-medium hover:text-neutral-800">en-US</a>
-        <span>or</span>
-        <a href="" class="font-medium hover:text-neutral-800">pt-BR</a>
+        <a
+          href="/"
+          class="font-medium hover:text-neutral-800"
+          data-astro-prefetch>en-US</a
+        >
+        <span>{textOr}</span>
+        <a
+          href="/pt"
+          class="font-medium hover:text-neutral-800"
+          data-astro-prefetch>pt-BR</a
+        >
       </div>
     </div>
   </footer>
