@@ -36,10 +36,16 @@ const {
     />
   </div>
   <div>
-    <h1 class="text-neutral-200 hover:text-white text-5xl font-bold mt-6 cursor-default">
+    <h1
+      class="text-neutral-200 hover:text-white text-5xl font-bold mt-6 cursor-default"
+    >
       {textName}
     </h1>
-    <p class="text-neutral-300 hover:text-neutral-200 text-lg mt-1 cursor-default">{textRole}</p>
+    <p
+      class="text-neutral-300 hover:text-neutral-200 text-lg mt-1 cursor-default"
+    >
+      {textRole}
+    </p>
 
     <p class="mt-4 cursor-default">
       <a
@@ -73,7 +79,9 @@ const {
         class="hover:text-purple-400">.NET</a
       >{textSeparator}
       <a
-        title={lang === "en" ? ("Experience with PostgreSQL, MySQL and SQL Server") : ("Experiência com PostgreSQL, MySQL e SQL Server")}
+        title={lang === "en"
+          ? "Experience with PostgreSQL, MySQL and SQL Server"
+          : "Experiência com PostgreSQL, MySQL e SQL Server"}
         rel="noopener noreferrer"
         target="_blank"
         href="https://pt.wikipedia.org/wiki/SQL"
@@ -93,7 +101,9 @@ const {
       >
     </p>
 
-    <p class="mt-5 mb-10 text-neutral-400 hover:text-neutral-300 text-md cursor-default">
+    <p
+      class="mt-5 mb-10 text-neutral-400 hover:text-neutral-300 text-md cursor-default"
+    >
       {textDescription}
     </p>
   </div>
@@ -188,12 +198,12 @@ const {
         {textUpdatedOn}
         <span class="font-medium">{dateLastUpdated}</span>
       </a>
-      <div class="text-xs whitespace-nowrap shrink-0">
+      <div class="text-xs whitespace-nowrap shrink-0 cursor-default">
         {
           lang === "en" ? (
             <span
               title="(Current) English"
-              class="text-neutral-500 font-medium cursor-default"
+              class="text-neutral-500 font-medium"
             >
               EN
             </span>
@@ -213,7 +223,7 @@ const {
           lang === "pt" ? (
             <span
               title="(Atual) Português"
-              class="text-neutral-500 font-medium cursor-default"
+              class="text-neutral-500 font-medium"
             >
               PT
             </span>
