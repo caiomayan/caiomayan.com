@@ -4,7 +4,7 @@ import Avatar from "../../assets/Avatar.jpg";
 
 const textName: string = "Caio Mayan";
 
-const textSeparator: string = " ∙";
+const textSeparator: string = ", ";
 
 const {
   textRole,
@@ -18,97 +18,70 @@ const {
 ---
 
 <aside
-  class="md:w-70 w-full md:h-screen md:sticky top-0 py-14 flex flex-col justify-between"
+  class="md:w-70 w-full md:h-screen md:sticky gap-6 flex flex-col justify-between pb-15 pt-15"
 >
-  <div class="relative group self-center">
-    <div
-      class="absolute inset-0 rounded-full bg-neutral-500/30 blur-2xl scale-100 group-hover:bg-white/20 transition-all duration-300"
-    >
+  <div class="flex flex-col gap-8">
+    <div class="relative group self-center">
+      <div
+        class="absolute inset-0 rounded-full bg-neutral-500/30 blur-2xl scale-100 group-hover:bg-white/20 transition-all duration-300"
+      >
+      </div>
+
+      <Image
+        src={Avatar}
+        alt=`${textName}'s Avatar'`
+        width="400"
+        height="400"
+        quality="max"
+        class="w-[220px] h-[220px] relative rounded-full border border-neutral-800 object-cover"
+      />
     </div>
+    <div class="flex flex-col">
+      <h1
+        class="text-neutral-200 hover:text-white text-5xl font-bold cursor-default"
+      >
+        {textName}
+      </h1>
+      <p
+        class="text-neutral-300 hover:text-neutral-200 text-lg mt-1 cursor-default"
+      >
+        {textRole}
+      </p>
 
-    <Image
-      src={Avatar}
-      alt=`${textName}'s Avatar'`
-      width="400"
-      height="400"
-      quality="max"
-      class="w-[220px] h-[220px] relative rounded-full border border-neutral-800 object-cover"
-    />
+      <p class="mt-4 cursor-default">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://nextjs.org/"
+          class="hover:text-green-400">Java & Spring Boot</a
+        >{textSeparator}
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://spring.io/projects/spring-boot"
+          class="hover:text-cyan-300">React</a
+        >{textSeparator}
+        <a
+          title={lang === "en"
+            ? "Experience with PostgreSQL and MySQL"
+            : "Experiência com PostgreSQL e MySQL"}
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://pt.wikipedia.org/wiki/SQL"
+          class="hover:text-sky-400">SQL</a
+        >
+      </p>
+
+      <p
+        class="mt-8 mb-10 text-neutral-400 hover:text-neutral-300 text-md cursor-default"
+      >
+        {textDescription}
+      </p>
+    </div>
   </div>
+
   <div>
-    <h1
-      class="text-neutral-200 hover:text-white text-5xl font-bold mt-6 cursor-default"
-    >
-      {textName}
-    </h1>
-    <p
-      class="text-neutral-300 hover:text-neutral-200 text-lg mt-1 cursor-default"
-    >
-      {textRole}
-    </p>
-
-    <p class="mt-4 cursor-default">
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://nextjs.org/"
-        class="hover:text-neutral-400">Next.js</a
-      >{textSeparator}
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://spring.io/projects/spring-boot"
-        class="hover:text-green-300">Spring Boot</a
-      >{textSeparator}
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://dotnet.microsoft.com/"
-        class="hidden hover:text-purple-400">.NET</a
-      >
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://astro.build/"
-        class="hover:text-orange-500">Astro</a
-      >{textSeparator}
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://nodejs.org/"
-        class="hover:text-green-500">Node.js</a
-      >{textSeparator}
-      <a
-        title={lang === "en"
-          ? "Experience with PostgreSQL and MySQL"
-          : "Experiência com PostgreSQL e MySQL"}
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://pt.wikipedia.org/wiki/SQL"
-        class="hover:text-sky-400">PostgreSQL</a
-      >{textSeparator}
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://www.mongodb.com/"
-        class="hidden hover:text-green-700">MongoDB</a
-      >
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://www.docker.com/"
-        class="hover:text-blue-600">Docker</a
-      >
-    </p>
-
-    <p
-      class="mt-5 mb-10 text-neutral-400 hover:text-neutral-300 text-md cursor-default"
-    >
-      {textDescription}
-    </p>
-  </div>
-
-  <ul class="flex gap-4 text-neutral-500">
+    <ul class="flex gap-4 text-neutral-500">
     <!-- GitHub -->
     <li>
       <a
@@ -241,4 +214,5 @@ const {
       </div>
     </div>
   </footer>
+  </div>
 </aside>

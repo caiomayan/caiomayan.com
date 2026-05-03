@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import Profile from "../components/astro/Profile.astro";
-import Aurora from "../components/Aurora";
+import Aurora from "../components/react/ui/Aurora";
 import "../styles/global.css";
 
 const nameTitleText: string = "Caio Mayan";
@@ -30,7 +30,7 @@ const {
     <title>{nameTitleText}</title>
     <ClientRouter />
   </head>
-  <body class="bg-bg text-text font-sans relative antialiased">
+  <body class="bg-bg text-text font-sans relative antialiased flex flex-row">
     <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
       <Aurora
         colorStops={["#080808", "#4b4b4b", "#000000"]}
@@ -41,7 +41,7 @@ const {
       />
     </div>
 
-    <div class="relative z-10 mx-auto min-h-screen px-40">
+    <div class="mx-auto min-h-screen flex flex-row gap-35 px-30">
       <Profile
         textRole={textRole}
         ,
@@ -57,7 +57,9 @@ const {
         ,
         lang={lang}
       />
-      <slot />
+      <main class="flex-1 md:pt-20">
+        <slot />
+      </main>
     </div>
   </body>
 </html>
