@@ -18,7 +18,7 @@ const {
 ---
 
 <aside
-  class="md:w-70 w-full md:h-screen md:sticky gap-6 flex flex-col justify-between pb-15 pt-15"
+  class="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between gap-6 pb-20 pt-15 z-20 max-w-79 md:min-w-70"
 >
   <div class="flex flex-col gap-8">
     <div class="relative group self-center">
@@ -33,7 +33,7 @@ const {
         width="400"
         height="400"
         quality="max"
-        class="w-[220px] h-[220px] relative rounded-full border border-neutral-800 object-cover"
+        class="w-55 h-55 relative rounded-full border border-neutral-800 object-cover"
       />
     </div>
     <div class="flex flex-col">
@@ -60,7 +60,7 @@ const {
           target="_blank"
           href="https://spring.io/projects/spring-boot"
           class="hover:text-cyan-300">React</a
-        >{textSeparator}
+        > {lang === "en" ? " and" : " e"}
         <a
           title={lang === "en"
             ? "Experience with PostgreSQL and MySQL"
@@ -178,7 +178,7 @@ const {
               title="(Current) English"
               class="text-neutral-500 font-medium"
             >
-              EN
+              English
             </span>
           ) : (
             <a
@@ -187,7 +187,7 @@ const {
               class="font-medium hover:text-neutral-800"
               data-astro-prefetch
             >
-              EN
+              Inglês
             </a>
           )
         }
@@ -198,7 +198,7 @@ const {
               title="(Atual) Português"
               class="text-neutral-500 font-medium"
             >
-              PT
+              Português
             </span>
           ) : (
             <a
@@ -207,7 +207,7 @@ const {
               class="font-medium hover:text-neutral-800"
               data-astro-prefetch
             >
-              PT
+              Portuguese
             </a>
           )
         }

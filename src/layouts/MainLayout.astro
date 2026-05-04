@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang={metaLang}>
+<html class="font-sans antialiased" lang={metaLang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
@@ -30,7 +30,7 @@ const {
     <title>{nameTitleText}</title>
     <ClientRouter />
   </head>
-  <body class="bg-bg text-text font-sans relative antialiased flex flex-row">
+  <body class="bg-bg text-text relative flex">
     <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
       <Aurora
         colorStops={["#080808", "#4b4b4b", "#000000"]}
@@ -41,23 +41,17 @@ const {
       />
     </div>
 
-    <div class="mx-auto min-h-screen flex flex-row gap-35 px-30">
+    <div class="mx-auto flex w-full flex-col gap-16 px-6 py-10 lg:flex-row lg:gap-35 lg:px-30 lg:py-0">
       <Profile
         textRole={textRole}
-        ,
         textDescription={textDescription}
-        ,
         textCurriculum={textCurriculum}
-        ,
         textUpdatedOn={textUpdatedOn}
-        ,
         dateLastUpdated={dateLastUpdated}
-        ,
         textOr={textOr}
-        ,
         lang={lang}
       />
-      <main class="flex-1 md:pt-20">
+      <main class="min-h-0 min-w-0 flex-1 flex flex-col md:py-20">
         <slot />
       </main>
     </div>
