@@ -1,3 +1,3 @@
-# 💻 Caio's Portfolio
+# Caio Mayan Website Portfolio
 
-Made with Astro and React
+My website built with Astro, React and Tailwind CSS. Inter typography is used, and deploy is on Vercel.
