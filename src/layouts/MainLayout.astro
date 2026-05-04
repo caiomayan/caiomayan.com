@@ -9,10 +9,8 @@ const nameTitleText: string = "Caio Mayan";
 const {
   textRole,
   textDescription,
-  textCurriculum,
   textUpdatedOn,
   dateLastUpdated,
-  textOr,
   metaLang,
   lang,
 } = Astro.props;
@@ -45,13 +43,11 @@ const {
       <Profile
         textRole={textRole}
         textDescription={textDescription}
-        textCurriculum={textCurriculum}
         textUpdatedOn={textUpdatedOn}
         dateLastUpdated={dateLastUpdated}
-        textOr={textOr}
         lang={lang}
       />
-      <main class="min-h-0 min-w-0 flex-1 flex flex-col md:py-20">
+      <main class="gap-10 min-h-0 min-w-0 flex-1 flex flex-col md:py-20">
         <slot />
       </main>
     </div>

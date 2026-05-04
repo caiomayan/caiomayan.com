@@ -10,15 +10,11 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
 <MainLayout
   textRole="Software Developer"
   ,
-  textDescription="20, Internet Systems @ IFPB. Searching for new opportunities in software development."
-  ,
-  textCurriculum="See my curriculum here"
+  textDescription="Internet Systems @ IFPB. Searching for new opportunities in software development."
   ,
   textUpdatedOn="Updated on"
   ,
   dateLastUpdated={lastUpdated}
-  ,
-  textOr=" or "
   ,
   metaLang="en"
   ,
@@ -26,20 +22,89 @@ const lastUpdated: string = new Date().toLocaleDateString("en-US", {
 >
   <section>
     <h1 class="text-4xl font-bold mb-4">A little bit about me</h1>
-    <div class="text-lg flex flex-col gap-2 text-neutral-400">
-      <p>
-        I'm a student of <span class="text-neutral-300 font-semibold">Internet Systems Technology</span> at <span class="text-neutral-300 font-semibold">IFPB Campus João Pessoa</span>, currently in my <span class="text-neutral-300 font-semibold">4th semester</span>. I've been sharpening my skills in software development, with a focus on <span class="text-neutral-300 font-semibold">backend development</span>, while also holding solid fundamentals in <span class="text-neutral-300 font-semibold">frontend</span> technologies.
+    <div class="text-md flex flex-col gap-2 text-neutral-400">
+      <p class="hover:text-neutral-300">
+        I'm a student of <span class="text-neutral-300 font-semibold"
+          >Internet Systems Technology</span
+        > at <span class="text-neutral-300 font-semibold"
+          >IFPB Campus João Pessoa</span
+        >, currently in my <span class="text-neutral-300 font-semibold"
+          >4th semester</span
+        >. I've been sharpening my skills in software development, with a focus
+        on <span class="text-neutral-300 font-semibold"
+          >backend development</span
+        >, while also holding solid fundamentals in <span
+          class="text-neutral-300 font-semibold">frontend</span
+        > technologies.
       </p>
-      <p>
-        My current main stack is <span class="text-neutral-300 font-semibold">Java Spring, Next.js, and PostgreSQL.</span>
+      <p class="hover:text-neutral-300">
+        My current main stack is <span class="text-neutral-300 font-semibold"
+          >Java Spring, Next.js, and PostgreSQL.</span
+        >
       </p>
-      <p>
-        On the <span class="text-neutral-300 font-semibold">frontend</span> side, I have experience with <span class="text-neutral-300 font-semibold">React, Next.js, Astro, and Angular</span>. On the <span class="text-neutral-300 font-semibold">backend</span>, my experience includes <span class="text-neutral-300 font-semibold">Node.js</span> (with <span class="text-neutral-300 font-semibold">TypeScript</span> and <span class="text-neutral-300 font-semibold">Express.js</span>) as well as <span class="text-neutral-300 font-semibold">Java</span> with <span class="text-neutral-300 font-semibold">Spring Boot</span>. I also have solid SQL knowledge — <span class="text-neutral-300 font-semibold">PostgreSQL</span> being my go-to — along with hands-on experience with <span class="text-neutral-300 font-semibold">Docker</span> and a clean, organized <span class="text-neutral-300 font-semibold">Git</span> workflow across all my projects.
+      <p class="hover:text-neutral-300">
+        On the <span class="text-neutral-300 font-semibold">frontend</span> side,
+        I have experience with <span class="text-neutral-300 font-semibold"
+          >React, Next.js, Astro, and Angular</span
+        >. On the <span class="text-neutral-300 font-semibold">backend</span>,
+        my experience includes <span class="text-neutral-300 font-semibold"
+          >Node.js</span
+        > (with <span class="text-neutral-300 font-semibold">TypeScript</span> and
+        <span class="text-neutral-300 font-semibold">Express.js</span>) as well
+        as <span class="text-neutral-300 font-semibold">Java</span> with <span
+          class="text-neutral-300 font-semibold">Spring Boot</span
+        >. I also have solid SQL knowledge — <span
+          class="text-neutral-300 font-semibold">PostgreSQL</span
+        > being my go-to — along with hands-on experience with <span
+          class="text-neutral-300 font-semibold">Docker</span
+        > and a clean, organized <span class="text-neutral-300 font-semibold"
+          >Git</span
+        > workflow across all my projects.
       </p>
-      <p>
-        In my free time, I've been building projects with <span class="text-neutral-300 font-semibold">Java Spring</span> and learning to integrate <span class="text-neutral-300 font-semibold">NoSQL</span> databases like <span class="text-neutral-300 font-semibold">Redis and MongoDB</span> into my workflow, while also deepening my <span class="text-neutral-300 font-semibold">AWS</span> knowledge for future deployments.
+      <p class="hover:text-neutral-300">
+        In my free time, I've been building projects with <span
+          class="text-neutral-300 font-semibold">Java Spring</span
+        > and learning to integrate <span class="text-neutral-300 font-semibold"
+          >NoSQL</span
+        > databases like <span class="text-neutral-300 font-semibold"
+          >Redis and MongoDB</span
+        > into my workflow, while also deepening my <span
+          class="text-neutral-300 font-semibold">AWS</span
+        > knowledge for future deployments.
       </p>
     </div>
   </section>
 
+  <footer
+    class="flex flex-col text-sm text-neutral-600 cursor-default select-none"
+  >
+    <p>
+      This website was built with <span
+        class="font-semibold hover:text-neutral-400 text-neutral-500"
+        >Astro</span
+      >, <span class="font-semibold hover:text-neutral-400 text-neutral-500"
+        >React</span
+      > and <span class="font-semibold hover:text-neutral-400 text-neutral-500"
+        >Tailwind CSS</span
+      >. The typography used is <a
+        href="https://fonts.google.com/specimen/Inter"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold hover:text-neutral-400 text-neutral-500">Inter</a
+      > and the site is hosted on <span
+        class="font-semibold hover:text-neutral-400 text-neutral-500"
+        >Vercel</span
+      >.
+    </p>
+    <p>
+      Last updated on <a
+        title="View deployments on GitHub"
+        href="https://github.com/caiomayan/caiomayan.com/deployments"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold hover:text-neutral-400 text-neutral-500"
+        >{lastUpdated}</a
+      >.
+    </p>
+  </footer>
 </MainLayout>
