@@ -39,7 +39,9 @@ const {
       />
     </div>
 
-    <div class="mx-auto flex w-full flex-col gap-16 px-6 py-10 lg:flex-row lg:gap-35 lg:px-30 lg:py-0">
+    <div
+      class="mx-auto flex w-full flex-col gap-5 px-12.5 lg:flex-row lg:gap-35 lg:px-30"
+    >
       <Profile
         textRole={textRole}
         textDescription={textDescription}
@@ -47,7 +49,7 @@ const {
         dateLastUpdated={dateLastUpdated}
         lang={lang}
       />
-      <main class="gap-10 min-h-0 min-w-0 flex-1 flex flex-col md:py-20">
+      <main class="gap-10 min-h-0 min-w-0 flex-1 flex flex-col pb-15 md:py-20">
         <slot />
       </main>
     </div>
